@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>START HERE — ByteBuddy Vocab Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="website/css/style.css" />
+  </head>
+  <body
+    data-page="browse"
+    data-nav-prefix="website/"
+    data-asset-prefix="website/"
+    data-browse-href="index.html"
+  >
+    <div class="blob blob-a" aria-hidden="true"></div>
+    <div class="blob blob-b" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="brand">
+        <button type="button" class="mascot" aria-label="Say hi to ByteBuddy">
+          <span class="mascot-face">🤖</span>
+        </button>
+        <div>
+          <p class="eyebrow">CS &amp; AI · Year 1 · 双击此文件打开网站</p>
+          <h1>ByteBuddy Vocab Hub</h1>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Main"></nav>
+    </header>
+
+    <main class="layout">
+      <section class="panel filters-panel float-in">
+        <h2 class="panel-title">Find a word</h2>
+        <div id="dashboard-stats" class="dashboard-wrap"></div>
+        <label class="field">
+          <span class="field-label">Search</span>
+          <input
+            id="search"
+            type="search"
+            placeholder="algorithm, 矩阵, debug…"
+            autocomplete="off"
+          />
+        </label>
+        <div class="field-row">
+          <label class="field">
+            <span class="field-label">Module</span>
+            <select id="filter-module">
+              <option value="">All modules</option>
+              <option value="Programming">Programming</option>
+              <option value="AI &amp; ML">AI &amp; ML</option>
+              <option value="Maths &amp; Logic">Maths &amp; Logic</option>
+              <option value="Lab &amp; Tools">Lab &amp; Tools</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="field-label">Review status</span>
+            <select id="filter-review">
+              <option value="">Any status</option>
+              <option value="New">New</option>
+              <option value="Learning">Learning</option>
+              <option value="Mastered">Mastered</option>
+            </select>
+          </label>
+        </div>
+        <label class="field">
+          <span class="field-label">Sort</span>
+          <select id="filter-sort">
+            <option value="word-asc">Word (A → Z)</option>
+            <option value="word-desc">Word (Z → A)</option>
+            <option value="module-asc">Module, then word</option>
+            <option value="date-desc">Word length</option>
+            <option value="status-group">Review status</option>
+          </select>
+        </label>
+        <button type="button" id="btn-export-csv" class="btn-primary">
+          Export CSV 📥
+        </button>
+        <button type="button" id="btn-export-review" class="btn-secondary">
+          Export review progress
+        </button>
+        <button type="button" id="btn-reset-review" class="btn-secondary">
+          Reset all to New
+        </button>
+        <button type="button" id="btn-clear-filters" class="btn-secondary">
+          Clear filters ✨
+        </button>
+        <p id="result-stats" class="result-stats"></p>
+        <p class="hint">
+          Tap <strong>N / L / M</strong> to track review (saved in this browser).
+          Use <strong>🔊 Listen</strong> for pronunciation (TTS).
+        </p>
+      </section>
+
+      <section class="content-area">
+        <div id="empty-state" class="empty-state" hidden>
+          <p class="empty-emoji">🔍</p>
+          <p>No matches — try another filter or search term.</p>
+        </div>
+        <div id="card-grid" class="card-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Vocabulary database · <span data-db-version></span> · 52 CS terms</p>
+    </footer>
+
+    <script src="website/js/vocab-extra.js"></script>
+    <script src="website/js/words.js"></script>
+    <script src="website/js/review-storage.js"></script>
+    <script src="website/js/shared.js"></script>
+    <script src="website/js/export-sort.js"></script>
+    <script src="website/js/speech.js"></script>
+    <script src="website/js/dashboard.js"></script>
+    <script src="website/js/nav.js"></script>
+    <script src="website/js/app.js"></script>
+    <script>
+      document.getElementById("btn-export-review")?.addEventListener("click", exportReviewProgressJson);
+      document.getElementById("btn-reset-review")?.addEventListener("click", () => {
+        if (confirm("Clear all review marks in this browser? Every word will show as New again.")) {
+          clearAllReviewOverrides();
+          renderBrowse();
+        }
+      });
+    </script>
+  </body>
+</html>

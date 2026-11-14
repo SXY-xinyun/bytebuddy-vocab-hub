@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ByteBuddy Vocab Hub — Review</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body
+    data-page="review"
+    data-nav-prefix=""
+    data-asset-prefix=""
+    data-browse-href="../index.html"
+  >
+    <div class="blob blob-a" aria-hidden="true"></div>
+    <div class="blob blob-b" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="brand">
+        <span class="mascot-static" aria-hidden="true">🎴</span>
+        <div>
+          <p class="eyebrow">Study mode</p>
+          <h1>Flashcard review</h1>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Main"></nav>
+    </header>
+
+    <main class="review-layout">
+      <section class="panel float-in">
+        <h2 class="panel-title">Build your deck</h2>
+        <label class="field">
+          <span class="field-label">Module</span>
+          <select id="review-module">
+            <option value="">All modules</option>
+            <option value="Programming">Programming</option>
+            <option value="AI &amp; ML">AI &amp; ML</option>
+            <option value="Maths &amp; Logic">Maths &amp; Logic</option>
+            <option value="Lab &amp; Tools">Lab &amp; Tools</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="field-label">Review status</span>
+          <select id="review-status">
+            <option value="New" selected>New (not studied yet)</option>
+            <option value="">All statuses</option>
+            <option value="Learning">Learning</option>
+            <option value="Mastered">Mastered</option>
+          </select>
+        </label>
+        <p class="hint">
+          Browse/Table show Chinese; here tap <strong>Reveal</strong> to see Chinese + English + example.
+        </p>
+      </section>
+
+      <section class="flash-area float-in delay-1">
+        <p id="flash-meta" class="result-stats"></p>
+        <article id="flashcard" class="flashcard panel"></article>
+        <div id="review-empty" class="empty-state" hidden>
+          <p class="empty-icon" aria-hidden="true"></p>
+          <p>No cards match this filter. Choose <strong>New</strong> or <strong>All statuses</strong>, or pick another module.</p>
+        </div>
+        <div class="flash-controls">
+          <button type="button" id="btn-prev" class="btn-secondary">← Prev</button>
+          <button type="button" id="btn-reveal" class="btn-primary">Reveal ✨</button>
+          <button type="button" id="btn-next" class="btn-secondary">Next →</button>
+        </div>
+        <div class="flash-mark" role="group" aria-label="Mark card">
+          <span class="field-label">Mark this card</span>
+          <button type="button" class="review-btn-wide" data-mark-review="New">New</button>
+          <button type="button" class="review-btn-wide" data-mark-review="Learning">Learning</button>
+          <button type="button" class="review-btn-wide" data-mark-review="Mastered">Mastered</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Review mode · <span data-db-version></span> · pitch-friendly demo</p>
+    </footer>
+
+    <script src="js/vocab-extra.js"></script>
+    <script src="js/words.js"></script>
+    <script src="js/review-storage.js"></script>
+    <script src="js/shared.js"></script>
+    <script src="js/export-sort.js"></script>
+    <script src="js/speech.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/review-mode.js"></script>
+  </body>
+</html>

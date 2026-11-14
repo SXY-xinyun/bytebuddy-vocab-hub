@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Maths and Logic">
+  <rect width="64" height="64" rx="16" fill="#fff6e0"/>
+  <path d="M18 46 L32 14 L46 46 Z" fill="#ffd166" stroke="#e6a800" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="30" y="38" width="4" height="8" fill="#2d3047"/>
+</svg>

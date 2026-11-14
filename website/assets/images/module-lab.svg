@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lab and Tools">
+  <rect width="64" height="64" rx="16" fill="#e6fff8"/>
+  <path d="M38 16 L26 36 L32 36 L28 48 L42 24 L36 24 L38 16 Z" fill="#4ecdc4" stroke="#1a9e92" stroke-width="1.5" stroke-linejoin="round"/>
+</svg>
