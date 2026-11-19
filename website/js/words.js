@@ -163,4 +163,4 @@ if (typeof MORE_VOCAB !== "undefined") {
   VOCABULARY.push(...MORE_VOCAB);
 }
 
-const VOCAB_DB_VERSION = "v2.0";
+const VOCAB_DB_VERSION = "v2.3";
